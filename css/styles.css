@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Ubuntu:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    width: 35rem;
+    height: 35rem;
+    background-image: linear-gradient(to bottom right, #e7d467 0%, #ec7e70 50%, #f17e13 100%);
+    background-size: 200% 200%;
+    animation: movingGradient 6s linear infinite alternate;
+    border-radius: 50%;
+    border: 0.5rem solid rgba(143, 119, 119, 0.534);
+    position: relative;
+}
+
+@keyframes movingGradient {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
+.numbers {
+    width: inherit;
+    height: inherit;
+    position: relative;
+}
+
+.numbers div {
+    position: absolute;
+    font-size: 2.5rem;
+    color: #fff;;
+    text-shadow: 2px 2px rgba(63, 63, 63, 0.85);
+}
+
+.twelve {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.three {
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.six {
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nine {
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.arrows {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrows::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.arrows div {
+    width: 0.6rem;
+    height: 12rem;
+    background-color: #fff;
+    position: absolute;
+    bottom: 50%;
+    border-radius: 100% 100% 0 0;
+    transform-origin: bottom center;
+}
+.arrows .hour {
+    height: 10rem;
+    transform: rotate(90deg);
+}
+.arrows .second {
+    width: 0.4rem;
+    background-color: rgba(63, 63, 63, 0.85);
+    transform: rotate(270deg);
+}
